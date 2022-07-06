@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-def best_score(my_dict):
-    if my_dict is None or len(my_dict) == 0:
-        return None
-    return sorted(my_dict, key=lambda score: score[2])[-1]
+def best_score(a_dictionary):
+    '''A function that returns a key with the biggest integer value '''
+    if a_dictionary and len(a_dictionary):
+        max = list(a_dictionary.keys())[0]
+        for key in a_dictionary:
+            if a_dictionary[key] > a_dictionary[max]:
+                max = key
+        return max
+    return None
